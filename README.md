@@ -7,7 +7,7 @@ Invoke-ADLabDeployer does the heavy lifting. From there on you can easily tune t
 Invoke-ADLabDeployer relies heavily on techniques like Hyper-V, sysprep and (remote) Powershell for the deployment and configuration.
 
 There are other projects out there that do similar things. But Invoke-ADLabDeployer has support for all Windows OS versions currently encountered at clients, specifically support for Win7 and Server2008R2, while keeping resource usage low by using smart Hyper-V tricks like differencing disks, dynamic memory, etc.
-More background info and reasoning why this script has added value over others as well as over Azure [here](https://outflank.nl/blog/)
+More background info and reasoning why this script has added value over others as well as over Azure [here](https://outflank.nl/blog/2018/03/30/automated-ad-and-windows-test-lab-deployments-with-invoke-adlabdeployer/)
 
 ## Running the script ##
 **There is no quick starting with this script. You really need to have parent images pre-created.**
@@ -87,7 +87,7 @@ The config file can have multiple labs defined. The `-Name` parameter to Invoke-
 	</Lab>	
 </Labs> 
 ```
-### Config file parameters - Network###
+### Config file parameters - Network ###
 This defined the network sections. This is mandatory. You can have multiple sections of this.
 Example:
 ```
@@ -116,7 +116,7 @@ Example:
 - `SafeModeAdminPass`: password required by Active Directory as the safe mode password for the local administrator account.
 
 
-### Config file parameters - System###
+### Config file parameters - System ###
 This defines a system. This is mandatory. You can have multiple sections of this.
 Example:
 ```
@@ -185,7 +185,7 @@ This repo and script uses the following directory structure, which is recommende
 - `.\SoftwareInstallers\Office14x86\`: example of Office folder, in this folder is the config.xml and the setup binary - basically just copy the entire contents of the install ISO to this folder.
 
 
-## Known bugs and caveats##
+## Known bugs and caveats ##
 - You need to prepare the base images yourself, this script does not do this for you. Im open for ideas to automate this.
 - Only supports English versions of Windows. Main reason is hardcoded commands like 'net localgroup "Remote Desktop Users"'. This is a result of a design choice to support systems with that only run PowerShell v2. Later PowerShell versions have fancy commands to alter local groups, but v2 doesnt. This is likely not going change in future versions, unless there is a way to keep support for PowerShell v2.
 - The server OS unattend files in this repository do not have support for 32 bit versions. This is not a hard change to do as it only required x86 sections of settings in the unattend files. I simply havent had the time nor demand for it.
