@@ -1,0 +1,23 @@
+<Configuration Product="ProPlusr">
+<Display Level="None" CompletionNotice="No" SuppressModal="No" AcceptEula="Yes" />
+<USERNAME Value="" />
+<USERINITIALS Value="" />
+<COMPANYNAME Value="" />
+<PIDKEY Value="XXXXXXXXXXXXXXXXXXXXXXX" />
+<Setting Id="AUTO_ACTIVATE" Value="1" />
+<Setting Id="SETUP_REBOOT" Value="Never" />
+<INSTALLLOCATION Value="" />
+<OptionState Id="ACCESSFiles" State="Absent" Children="force" />
+<OptionState Id="EXCELFiles" State="Local" Children="force" />
+<OptionState Id="XDOCSFiles" State="Absent" Children="force" />
+<OptionState Id="LyncCoreFiles" State="Local" Children="force" />
+<OptionState Id="OneNoteFiles" State="Absent" Children="force" />
+<OptionState Id="OUTLOOKFiles" State="Local" Children="force" />
+<OptionState Id="PPTFiles" State="Local" Children="force" />
+<OptionState Id="PubPrimary" State="Absent" Children="force" />
+<OptionState Id="GrooveFiles2" State="Absent" Children="force" />
+<OptionState Id="VisioPreviewerFiles" State="Local" Children="force" />
+<OptionState Id="WORDFiles" State="Local" Children="force" />
+<OptionState Id="SHAREDFiles" State="Local" Children="force" />
+<OptionState Id="TOOLSFiles" State="Local" Children="force" />
+</Configuration>

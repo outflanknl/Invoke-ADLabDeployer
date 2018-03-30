@@ -1,0 +1,87 @@
+PS D:\ADLabDeployer> $return_net,$return_sys,$return_ads = Invoke-ADLabDeployer -LabConfigFile configs\labs_config.xml -Name FooBar -CheckConfigOnly
+PS D:\ADLabDeployer> $return_net
+
+Name                           Value
+----                           -----
+net2                           {NetName, Subnet, GW}
+net1                           {NetName, Subnet, GW}
+
+
+PS D:\ADLabDeployer> $return_net.values
+
+Name                           Value
+----                           -----
+NetName                        net2
+Subnet                         10.202.2.0/24
+GW                             10.202.2.1
+NetName                        net1
+Subnet                         10.202.1.0/24
+GW                             10.202.1.1
+
+
+PS D:\ADLabDeployer> $return_ads
+
+Name                           Value
+----                           -----
+BreakMe.local                  {PDC_LocalPass, SafeModeAdminPass, ADDSName, PDC...}
+
+
+PS D:\ADLabDeployer> $return_ads.Values
+
+Name                           Value
+----                           -----
+PDC_LocalPass                  Outflank123
+SafeModeAdminPass              Outflank123
+ADDSName                       BreakMe.local
+PDC                            server1
+PDC_IP                         10.202.1.11
+ParentDomain                   .
+PDC_LocalUser                  ted
+
+
+PS D:\ADLabDeployer> $return_sys
+
+Name                           Value
+----                           -----
+client8                        {VMName, OfficeInstaller, Mem, Net1_GW...}
+server4                        {VMName, Mem, Net1_GW, OS...}
+server5                        {VMName, Mem, Net1_GW, OS...}
+server2                        {VMName, Mem, Net1_GW, OS...}
+client6                        {VMName, OfficeInstaller, Mem, Net1_GW...}
+client7                        {VMName, OfficeInstaller, Mem, Net1_GW...}
+server1                        {VMName, Mem, Net1_GW, OS...}
+client5                        {VMName, OfficeInstaller, Mem, Net1_GW...}
+client2                        {VMName, OfficeInstaller, Mem, Net1_GW...}
+client3                        {VMName, OfficeInstaller, Mem, Net1_GW...}
+client1                        {VMName, OfficeInstaller, Mem, Net1_GW...}
+client4                        {VMName, OfficeInstaller, Mem, Net1_GW...}
+server3                        {VMName, Mem, Net1_GW, OS...}
+
+
+PS D:\ADLabDeployer> $return_sys.client1
+
+Name                           Value
+----                           -----
+VMName                         FooBar_client1_10.202.2.11_windows10x86_Office16x86
+OfficeInstaller                Office16x86\setup.exe
+Mem                            4GB
+Net1_GW                        10.202.2.1
+OS                             windows10x86
+UnattendFile                   unattend\unattend.win10.xml
+SW_Install                     {Chrome\googlechromestandaloneenterprise.msi, 7z\7z1801-x86.msi, npp\npp.7.5.0.installer.x86.msi}
+Pass                           Outflank123
+User                           ted
+Net1_IP                        10.202.2.11/24
+Hostname                       client1
+Win_Update                     True
+Net1_MAC                       06-59-6a-31-a5-e8
+Net1_DNS                       10.202.1.11
+Net1_Name                      net2
+RDP_Allow                      True
+Domain                         BreakMe.local
+ParentDisk                     parent-en_windows_10_enterprise_version_1709_updated_dec_2017_x86_dvd_100406182-updated201801
+OfficeConfig                   Office16x86\config.xml
+Type                           Client
+
+
+PS D:\ADLabDeployer>

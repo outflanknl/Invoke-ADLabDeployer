@@ -1,0 +1,23 @@
+<Configuration>
+
+  <Add OfficeClientEdition="32" >
+    <Product ID="ProPlusRetail" PIDKEY="XXXX-XXXX-XXXX-XXXX-XXXX">
+      <Language ID="en-us" />
+      <ExcludeApp ID="Access" />
+      <ExcludeApp ID="Groove" />
+      <ExcludeApp ID="InfoPath" />
+      <ExcludeApp ID="Lync" />
+      <ExcludeApp ID="OneDrive" />
+      <ExcludeApp ID="OneNote" />
+      <ExcludeApp ID="Project" />
+      <ExcludeApp ID="Publisher" />
+      <ExcludeApp ID="SharePointDesigner" />
+      <ExcludeApp ID="Visio" />
+    </Product>
+  </Add>
+	<Updates Enabled="False" />
+	<Display Level="None" AcceptEULA="True" />
+	<Property Name="AutoActivate" Value="1" />
+	<Property Name="ForceAppShutdown" Value="TRUE" />
+</Configuration>
+

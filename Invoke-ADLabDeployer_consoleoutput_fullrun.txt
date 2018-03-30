@@ -1,0 +1,421 @@
+PS D:\ADLabDeployer> Invoke-ADLabDeployer -LabConfigFile configs\labs_config.xml -Name FooBar -Verbose
+VERBOSE: [*] Start lab deployment
+VERBOSE: [+] Successfully opened configs\labs_config.xml
+VERBOSE: [+] Successfully processed config of network: net1
+VERBOSE: [+] Successfully processed config of network: net2
+VERBOSE: [+] Successfully processed network config. Amount of networks read: 2.
+VERBOSE: [+] Successfully processed config of system: server1
+VERBOSE: [+] Successfully processed config of system: server2
+VERBOSE: [+] Successfully processed config of system: server3
+VERBOSE: [+] Successfully processed config of system: server4
+VERBOSE: [+] Successfully processed config of system: server5
+VERBOSE: [+] Successfully processed config of system: client1
+VERBOSE: [+] Successfully processed config of system: client2
+VERBOSE: [+] Successfully processed config of system: client3
+VERBOSE: [+] Successfully processed config of system: client4
+VERBOSE: [+] Successfully processed config of system: client5
+VERBOSE: [+] Successfully processed config of system: client6
+VERBOSE: [+] Successfully processed config of system: client7
+VERBOSE: [+] Successfully processed config of system: client8
+VERBOSE: [*] Done processing system config in XML. Amount of systems read: 13.
+VERBOSE: [*] Start processing config of an ActiveDirectory Domain Services.
+VERBOSE: [+] Successfully processed config of AD domain: BreakMe.local
+VERBOSE: [*] Done processing AD config in XML. Amount of AD domains read: 1.
+VERBOSE: [*] Done adjusting DNS info for Domain joined systems.
+VERBOSE: [*] Done reading the lab config file
+VERBOSE: [*] Start setting up the virtual network
+VERBOSE: [+] Removing netnat networks as they interfere with our desired setup
+VERBOSE: [*] Routing already enabled
+VERBOSE: [*] Processing virtual switch FooBar_net2
+VERBOSE: [*] Virtual switch FooBar_net2 found with correct IP address, no further config needed.
+VERBOSE: [*] Processing virtual switch FooBar_net1
+VERBOSE: [*] Virtual switch FooBar_net1 found with correct IP address, no further config needed.
+VERBOSE: [+] Successfully setup virtual network.
+VERBOSE: [*] Start setting up systems
+VERBOSE: [+] Creating new VM: FooBar_client8_10.202.2.18_windows8.1x86_Office15x86
+VERBOSE: [+] VM FooBar_client8_10.202.2.18_windows8.1x86_Office15x86 created, now booting.
+VERBOSE: [+] Creating new VM: FooBar_server4_10.202.1.14_windows2008R2x64
+VERBOSE: [+] VM FooBar_server4_10.202.1.14_windows2008R2x64 created, now booting.
+VERBOSE: [+] Creating new VM: FooBar_server5_10.202.1.15_windows2012R2x64
+VERBOSE: [+] VM FooBar_server5_10.202.1.15_windows2012R2x64 created, now booting.
+VERBOSE: [+] Creating new VM: FooBar_server2_10.202.1.12_windows2016x64
+VERBOSE: [+] VM FooBar_server2_10.202.1.12_windows2016x64 created, now booting.
+VERBOSE: [+] Creating new VM: FooBar_client6_10.202.2.16_windows7x86_Office14x86
+VERBOSE: [+] VM FooBar_client6_10.202.2.16_windows7x86_Office14x86 created, now booting.
+VERBOSE: [+] Creating new VM: FooBar_client7_10.202.2.17_windows8.1x64_Office15x86
+VERBOSE: [+] VM FooBar_client7_10.202.2.17_windows8.1x64_Office15x86 created, now booting.
+VERBOSE: [+] Creating new VM: FooBar_server1_10.202.1.11_windows2012R2x64
+VERBOSE: [+] VM FooBar_server1_10.202.1.11_windows2012R2x64 created, now booting.
+VERBOSE: [+] Creating new VM: FooBar_client5_10.202.2.15_windows7x64_Office16x64
+VERBOSE: [+] VM FooBar_client5_10.202.2.15_windows7x64_Office16x64 created, now booting.
+VERBOSE: [+] Creating new VM: FooBar_client2_10.202.2.12_windows10x64_Office16x64
+VERBOSE: [+] VM FooBar_client2_10.202.2.12_windows10x64_Office16x64 created, now booting.
+VERBOSE: [+] Creating new VM: FooBar_client3_10.202.2.13_windows10x86_Office16x86
+VERBOSE: [+] VM FooBar_client3_10.202.2.13_windows10x86_Office16x86 created, now booting.
+VERBOSE: [+] Creating new VM: FooBar_client1_10.202.2.11_windows10x86_Office16x86
+VERBOSE: [+] VM FooBar_client1_10.202.2.11_windows10x86_Office16x86 created, now booting.
+VERBOSE: [+] Creating new VM: FooBar_client4_10.202.2.14_windows10x64_Office16x64
+VERBOSE: [+] VM FooBar_client4_10.202.2.14_windows10x64_Office16x64 created, now booting.
+VERBOSE: [+] Creating new VM: FooBar_server3_10.202.1.13_windows2016x64
+VERBOSE: [+] VM FooBar_server3_10.202.1.13_windows2016x64 created, now booting.
+VERBOSE: [+] Done setting up the VM(s) and now starting them up. Giving them 180s to boot.
+VERBOSE: [*] Checking if PDC is up
+VERBOSE: [*] System is up. Start building ADDS
+VERBOSE: [*] Starting Installation of ADDS Roles/Features
+WARNING: Windows automatic updating is not enabled. To ensure that your newly-installed role or feature is automatically
+updated, turn on Windows Update.
+VERBOSE: [+] Successfully installed ADDS Roles/Features.
+VERBOSE: [*] Enabling local administrator account
+VERBOSE: [+] Local administrator account enabled.
+VERBOSE: [*] Installing the Forest - this may take several minutes
+WARNING: Windows Server 2012 R2 domain controllers have a default for the security setting named "Allow cryptography
+algorithms compatible with Windows NT 4.0" that prevents weaker cryptography algorithms when establishing security channel
+sessions.
+
+For more information about this setting, see Knowledge Base article 942564 (http://go.microsoft.com/fwlink/?LinkId=104751).
+
+WARNING: A delegation for this DNS server cannot be created because the authoritative parent zone cannot be found or it does
+not run Windows DNS server. If you are integrating with an existing DNS infrastructure, you should manually create a
+delegation to this DNS server in the parent zone to ensure reliable name resolution from outside the domain "BreakMe.local".
+Otherwise, no action is required.
+
+WARNING: Windows Server 2012 R2 domain controllers have a default for the security setting named "Allow cryptography
+algorithms compatible with Windows NT 4.0" that prevents weaker cryptography algorithms when establishing security channel
+sessions.
+
+For more information about this setting, see Knowledge Base article 942564 (http://go.microsoft.com/fwlink/?LinkId=104751).
+
+WARNING: A delegation for this DNS server cannot be created because the authoritative parent zone cannot be found or it does
+not run Windows DNS server. If you are integrating with an existing DNS infrastructure, you should manually create a
+delegation to this DNS server in the parent zone to ensure reliable name resolution from outside the domain "BreakMe.local".
+Otherwise, no action is required.
+
+VERBOSE: [*] PDC is rebooting for Forest and Domain to be effective. This can take a while depending on your hardware.
+VERBOSE: [*] We will wait up till 5 minutes, but check periodically.
+VERBOSE: [+] PDC is back up. Now checking if ADDS is up and running.
+VERBOSE: [+] Forest and Domain BreakMe.local successfully installed.
+VERBOSE: [*] Verifying if DNS server 10.202.1.11 is giving out a SRV type record on _ldap._tcp.pdc._msdcs.BreakMe.local
+VERBOSE: _ldap._tcp.pdc._msdcs.BreakMe.local
+VERBOSE: [+] SRV record found. Continuing with domain join.
+VERBOSE: [*] Joining systems to AD Domains
+VERBOSE: [+] System client8 : Enabling quick start of WinRM
+VERBOSE: [*] System client8 : Starting domain join.
+VERBOSE: [*] System client8 : not joined, about to do so.
+VERBOSE: [+] System client8 : Successfully joined the domain. Now rebooting.
+VERBOSE: [+] System server4 : Enabling quick start of WinRM
+VERBOSE: [*] System server4 : Starting domain join.
+VERBOSE: [*] System server4 : not joined, about to do so.
+VERBOSE: [+] System server4 : Successfully joined the domain. Now rebooting.
+VERBOSE: [+] System server5 : Enabling quick start of WinRM
+VERBOSE: [*] System server5 : Starting domain join.
+VERBOSE: [*] System server5 : not joined, about to do so.
+VERBOSE: [+] System server5 : Successfully joined the domain. Now rebooting.
+VERBOSE: [+] System client6 : Enabling quick start of WinRM
+VERBOSE: [*] System client6 : Starting domain join.
+VERBOSE: [*] System client6 : not joined, about to do so.
+VERBOSE: [+] System client6 : Successfully joined the domain. Now rebooting.
+VERBOSE: [+] System client7 : Enabling quick start of WinRM
+VERBOSE: [*] System client7 : Starting domain join.
+VERBOSE: [*] System client7 : not joined, about to do so.
+VERBOSE: [+] System client7 : Successfully joined the domain. Now rebooting.
+VERBOSE: [+] System server1 : Enabling quick start of WinRM
+VERBOSE: [*] System server1 : Starting domain join.
+VERBOSE: [*] System server1 : already in that domain. Nothing to do.
+VERBOSE: [+] System client5 : Enabling quick start of WinRM
+VERBOSE: [*] System client5 : Starting domain join.
+VERBOSE: [*] System client5 : not joined, about to do so.
+VERBOSE: [+] System client5 : Successfully joined the domain. Now rebooting.
+VERBOSE: [+] System client2 : Enabling quick start of WinRM
+VERBOSE: [*] System client2 : Starting domain join.
+VERBOSE: [*] System client2 : not joined, about to do so.
+VERBOSE: [+] System client2 : Successfully joined the domain. Now rebooting.
+VERBOSE: [+] System client3 : Enabling quick start of WinRM
+VERBOSE: [*] System client3 : Starting domain join.
+VERBOSE: [*] System client3 : not joined, about to do so.
+VERBOSE: [+] System client3 : Successfully joined the domain. Now rebooting.
+VERBOSE: [+] System client1 : Enabling quick start of WinRM
+VERBOSE: [*] System client1 : Starting domain join.
+VERBOSE: [*] System client1 : not joined, about to do so.
+VERBOSE: [+] System client1 : Successfully joined the domain. Now rebooting.
+VERBOSE: [+] System client4 : Enabling quick start of WinRM
+VERBOSE: [*] System client4 : Starting domain join.
+VERBOSE: [*] System client4 : not joined, about to do so.
+VERBOSE: [+] System client4 : Successfully joined the domain. Now rebooting.
+VERBOSE: [+] System server3 : Enabling quick start of WinRM
+VERBOSE: [*] System server3 : Starting domain join.
+VERBOSE: [*] System server3 : not joined, about to do so.
+VERBOSE: [+] System server3 : Successfully joined the domain. Now rebooting.
+VERBOSE: [*] Starting installation of software packages.
+VERBOSE: [*] System client8 : Starting package installations.
+VERBOSE: [+] System client8 : Removing specific reg key of CEIP that is a known bug for slow msi installs.
+VERBOSE: [+] System client8 : Stopping Spooler service
+VERBOSE: [+] System client8 : Disabling Volume Shadow Copy Service.
+VERBOSE: [*] System client8 : No software files to copy.
+VERBOSE: [*] System client8 : running msi software installers.
+VERBOSE: [+] System client8 : Installing software package googlechromestandaloneenterprise.msi. This may take some time.
+VERBOSE: [+] System client8 : Installing software package 7z1801-x86.msi. This may take some time.
+VERBOSE: [+] System client8 : Installing software package npp.7.5.0.installer.x86.msi. This may take some time.
+VERBOSE: [+] System client8 : Copying Office installer files.
+VERBOSE: [*] System client8 : Starting Office install. This may take some time.
+VERBOSE: [+] System client8 : Office installation successful.
+VERBOSE: [+] System client8 : Enabling Volume Shadow Copy Service.
+VERBOSE: [*] System client8 : Done with software installation on this system.
+VERBOSE: [*] System server4 : Starting package installations.
+VERBOSE: [+] System server4 : Removing specific reg key of CEIP that is a known bug for slow msi installs.
+VERBOSE: [+] System server4 : Stopping Spooler service
+VERBOSE: [+] System server4 : Disabling Volume Shadow Copy Service.
+VERBOSE: [*] System server4 : No software files to copy.
+VERBOSE: [*] System server4 : running msi software installers.
+VERBOSE: [+] System server4 : Installing software package googlechromestandaloneenterprise.msi. This may take some time.
+VERBOSE: [+] System server4 : Installing software package 7z1801-x86.msi. This may take some time.
+VERBOSE: [+] System server4 : Installing software package npp.7.5.0.installer.x86.msi. This may take some time.
+VERBOSE: [*] System server4 : No Office to install.
+VERBOSE: [+] System server4 : Enabling Volume Shadow Copy Service.
+VERBOSE: [*] System server4 : Done with software installation on this system.
+VERBOSE: [*] System server5 : Starting package installations.
+VERBOSE: [+] System server5 : Removing specific reg key of CEIP that is a known bug for slow msi installs.
+VERBOSE: [+] System server5 : Stopping Spooler service
+VERBOSE: [+] System server5 : Disabling Volume Shadow Copy Service.
+VERBOSE: [*] System server5 : No software files to copy.
+VERBOSE: [*] System server5 : running msi software installers.
+VERBOSE: [+] System server5 : Installing software package googlechromestandaloneenterprise.msi. This may take some time.
+VERBOSE: [+] System server5 : Installing software package 7z1801-x86.msi. This may take some time.
+VERBOSE: [+] System server5 : Installing software package npp.7.5.0.installer.x86.msi. This may take some time.
+VERBOSE: [*] System server5 : No Office to install.
+VERBOSE: [+] System server5 : Enabling Volume Shadow Copy Service.
+VERBOSE: [*] System server5 : Done with software installation on this system.
+VERBOSE: [*] System server2 : Starting package installations.
+VERBOSE: [+] System server2 : Removing specific reg key of CEIP that is a known bug for slow msi installs.
+VERBOSE: [+] System server2 : Stopping Spooler service
+VERBOSE: [+] System server2 : Disabling Volume Shadow Copy Service.
+VERBOSE: [*] System server2 : Copying software files.
+VERBOSE: [+] System server2 : Copying software package
+VERBOSE: [*] System server2 : running msi software installers.
+VERBOSE: [+] System server2 : Installing software package googlechromestandaloneenterprise.msi. This may take some time.
+VERBOSE: [+] System server2 : Installing software package 7z1801-x86.msi. This may take some time.
+VERBOSE: [+] System server2 : Installing software package npp.7.5.0.installer.x86.msi. This may take some time.
+VERBOSE: [*] System server2 : No Office to install.
+VERBOSE: [+] System server2 : Enabling Volume Shadow Copy Service.
+VERBOSE: [*] System server2 : Done with software installation on this system.
+VERBOSE: [*] System client6 : Starting package installations.
+VERBOSE: [+] System client6 : Removing specific reg key of CEIP that is a known bug for slow msi installs.
+VERBOSE: [+] System client6 : Stopping Spooler service
+VERBOSE: [+] System client6 : Disabling Volume Shadow Copy Service.
+VERBOSE: [*] System client6 : No software files to copy.
+VERBOSE: [*] System client6 : running msi software installers.
+VERBOSE: [+] System client6 : Installing software package googlechromestandaloneenterprise.msi. This may take some time.
+VERBOSE: [+] System client6 : Installing software package 7z1801-x86.msi. This may take some time.
+VERBOSE: [+] System client6 : Installing software package npp.7.5.0.installer.x86.msi. This may take some time.
+VERBOSE: [+] System client6 : Copying Office installer files.
+VERBOSE: [*] System client6 : Starting Office install. This may take some time.
+VERBOSE: [+] System client6 : Office installation successful.
+VERBOSE: [+] System client6 : Enabling Volume Shadow Copy Service.
+VERBOSE: [*] System client6 : Done with software installation on this system.
+VERBOSE: [*] System client7 : Starting package installations.
+VERBOSE: [+] System client7 : Removing specific reg key of CEIP that is a known bug for slow msi installs.
+VERBOSE: [+] System client7 : Stopping Spooler service
+VERBOSE: [+] System client7 : Disabling Volume Shadow Copy Service.
+VERBOSE: [*] System client7 : No software files to copy.
+VERBOSE: [*] System client7 : running msi software installers.
+VERBOSE: [+] System client7 : Installing software package googlechromestandaloneenterprise.msi. This may take some time.
+VERBOSE: [+] System client7 : Installing software package 7z1801-x86.msi. This may take some time.
+VERBOSE: [+] System client7 : Installing software package npp.7.5.0.installer.x86.msi. This may take some time.
+VERBOSE: [+] System client7 : Copying Office installer files.
+VERBOSE: [*] System client7 : Starting Office install. This may take some time.
+VERBOSE: [+] System client7 : Office installation successful.
+VERBOSE: [+] System client7 : Enabling Volume Shadow Copy Service.
+VERBOSE: [*] System client7 : Done with software installation on this system.
+VERBOSE: [*] System server1 : Starting package installations.
+VERBOSE: [+] System server1 : Removing specific reg key of CEIP that is a known bug for slow msi installs.
+VERBOSE: [+] System server1 : Stopping Spooler service
+VERBOSE: [+] System server1 : Disabling Volume Shadow Copy Service.
+VERBOSE: [*] System server1 : No software files to copy.
+VERBOSE: [*] System server1 : running msi software installers.
+VERBOSE: [+] System server1 : Installing software package googlechromestandaloneenterprise.msi. This may take some time.
+VERBOSE: [+] System server1 : Installing software package 7z1801-x86.msi. This may take some time.
+VERBOSE: [+] System server1 : Installing software package npp.7.5.0.installer.x86.msi. This may take some time.
+VERBOSE: [*] System server1 : No Office to install.
+VERBOSE: [+] System server1 : Enabling Volume Shadow Copy Service.
+VERBOSE: [*] System server1 : Done with software installation on this system.
+VERBOSE: [*] System client5 : Starting package installations.
+VERBOSE: [+] System client5 : Removing specific reg key of CEIP that is a known bug for slow msi installs.
+VERBOSE: [+] System client5 : Stopping Spooler service
+VERBOSE: [+] System client5 : Disabling Volume Shadow Copy Service.
+VERBOSE: [*] System client5 : No software files to copy.
+VERBOSE: [*] System client5 : running msi software installers.
+VERBOSE: [+] System client5 : Installing software package googlechromestandaloneenterprise.msi. This may take some time.
+VERBOSE: [+] System client5 : Installing software package 7z1801-x86.msi. This may take some time.
+VERBOSE: [+] System client5 : Installing software package npp.7.5.0.installer.x86.msi. This may take some time.
+VERBOSE: [+] System client5 : Copying Office installer files.
+VERBOSE: [*] System client5 : Starting Office install. This may take some time.
+VERBOSE: [+] System client5 : Office installation successful.
+VERBOSE: [+] System client5 : Enabling Volume Shadow Copy Service.
+VERBOSE: [*] System client5 : Done with software installation on this system.
+VERBOSE: [*] System client2 : Starting package installations.
+VERBOSE: [+] System client2 : Removing specific reg key of CEIP that is a known bug for slow msi installs.
+VERBOSE: [+] System client2 : Stopping Spooler service
+VERBOSE: [+] System client2 : Disabling Volume Shadow Copy Service.
+VERBOSE: [*] System client2 : No software files to copy.
+VERBOSE: [*] System client2 : running msi software installers.
+VERBOSE: [+] System client2 : Installing software package googlechromestandaloneenterprise.msi. This may take some time.
+VERBOSE: [+] System client2 : Installing software package 7z1801-x86.msi. This may take some time.
+VERBOSE: [+] System client2 : Installing software package npp.7.5.0.installer.x86.msi. This may take some time.
+VERBOSE: [+] System client2 : Copying Office installer files.
+VERBOSE: [*] System client2 : Starting Office install. This may take some time.
+VERBOSE: [+] System client2 : Office installation successful.
+VERBOSE: [+] System client2 : Enabling Volume Shadow Copy Service.
+VERBOSE: [*] System client2 : Done with software installation on this system.
+VERBOSE: [*] System client3 : Starting package installations.
+VERBOSE: [+] System client3 : Removing specific reg key of CEIP that is a known bug for slow msi installs.
+VERBOSE: [+] System client3 : Stopping Spooler service
+VERBOSE: [+] System client3 : Disabling Volume Shadow Copy Service.
+VERBOSE: [*] System client3 : No software files to copy.
+VERBOSE: [*] System client3 : running msi software installers.
+VERBOSE: [+] System client3 : Installing software package googlechromestandaloneenterprise.msi. This may take some time.
+VERBOSE: [+] System client3 : Installing software package 7z1801-x86.msi. This may take some time.
+VERBOSE: [+] System client3 : Installing software package npp.7.5.0.installer.x86.msi. This may take some time.
+VERBOSE: [+] System client3 : Copying Office installer files.
+VERBOSE: [*] System client3 : Starting Office install. This may take some time.
+VERBOSE: [+] System client3 : Office installation successful.
+VERBOSE: [+] System client3 : Enabling Volume Shadow Copy Service.
+VERBOSE: [*] System client3 : Done with software installation on this system.
+VERBOSE: [*] System client1 : Starting package installations.
+VERBOSE: [+] System client1 : Removing specific reg key of CEIP that is a known bug for slow msi installs.
+VERBOSE: [+] System client1 : Stopping Spooler service
+VERBOSE: [+] System client1 : Disabling Volume Shadow Copy Service.
+VERBOSE: [*] System client1 : No software files to copy.
+VERBOSE: [*] System client1 : running msi software installers.
+VERBOSE: [+] System client1 : Installing software package googlechromestandaloneenterprise.msi. This may take some time.
+VERBOSE: [+] System client1 : Installing software package 7z1801-x86.msi. This may take some time.
+VERBOSE: [+] System client1 : Installing software package npp.7.5.0.installer.x86.msi. This may take some time.
+VERBOSE: [+] System client1 : Copying Office installer files.
+VERBOSE: [*] System client1 : Starting Office install. This may take some time.
+VERBOSE: [+] System client1 : Office installation successful.
+VERBOSE: [+] System client1 : Enabling Volume Shadow Copy Service.
+VERBOSE: [*] System client1 : Done with software installation on this system.
+VERBOSE: [*] System client4 : Starting package installations.
+VERBOSE: [+] System client4 : Removing specific reg key of CEIP that is a known bug for slow msi installs.
+VERBOSE: [+] System client4 : Stopping Spooler service
+VERBOSE: [+] System client4 : Disabling Volume Shadow Copy Service.
+VERBOSE: [*] System client4 : No software files to copy.
+VERBOSE: [*] System client4 : running msi software installers.
+VERBOSE: [+] System client4 : Installing software package googlechromestandaloneenterprise.msi. This may take some time.
+VERBOSE: [+] System client4 : Installing software package 7z1801-x86.msi. This may take some time.
+VERBOSE: [+] System client4 : Installing software package npp.7.5.0.installer.x86.msi. This may take some time.
+VERBOSE: [+] System client4 : Copying Office installer files.
+VERBOSE: [*] System client4 : Starting Office install. This may take some time.
+VERBOSE: [+] System client4 : Office installation successful.
+VERBOSE: [+] System client4 : Enabling Volume Shadow Copy Service.
+VERBOSE: [*] System client4 : Done with software installation on this system.
+VERBOSE: [*] System server3 : Starting package installations.
+VERBOSE: [+] System server3 : Removing specific reg key of CEIP that is a known bug for slow msi installs.
+VERBOSE: [+] System server3 : Stopping Spooler service
+VERBOSE: [+] System server3 : Disabling Volume Shadow Copy Service.
+VERBOSE: [*] System server3 : No software files to copy.
+VERBOSE: [*] System server3 : running msi software installers.
+VERBOSE: [+] System server3 : Installing software package googlechromestandaloneenterprise.msi. This may take some time.
+VERBOSE: [+] System server3 : Installing software package 7z1801-x86.msi. This may take some time.
+VERBOSE: [+] System server3 : Installing software package npp.7.5.0.installer.x86.msi. This may take some time.
+VERBOSE: [*] System server3 : No Office to install.
+VERBOSE: [+] System server3 : Enabling Volume Shadow Copy Service.
+VERBOSE: [*] System server3 : Done with software installation on this system.
+VERBOSE: [*] Starting local configuration.
+VERBOSE: [*] System client8 : Starting local configurations.
+VERBOSE: [*] System client8 : Running with domain creds - will do domain related local tasks.
+VERBOSE: [*] System client8 : Setting RDP settings.
+VERBOSE: [+] System client8 : Enabling RDP.
+VERBOSE: [+] System client8 : Allowing 'Domain users' group to RDP.
+VERBOSE: [+] System client8 : Disabling Restore Points.
+VERBOSE: [+] System client8 : Setting Windows Update settings to Auto-Update
+VERBOSE: [*] System client8 : Done with local configurations.
+VERBOSE: [*] System server4 : Starting local configurations.
+VERBOSE: [*] System server4 : Running with domain creds - will do domain related local tasks.
+VERBOSE: [*] System server4 : Setting RDP settings.
+VERBOSE: [+] System server4 : Enabling RDP.
+VERBOSE: [+] System server4 : Allowing 'Domain users' group to RDP.
+VERBOSE: [+] System server4 : Setting Windows Update settings to Auto-Update
+VERBOSE: [*] System server4 : Done with local configurations.
+VERBOSE: [*] System server5 : Starting local configurations.
+VERBOSE: [*] System server5 : Running with domain creds - will do domain related local tasks.
+VERBOSE: [*] System server5 : Setting RDP settings.
+VERBOSE: [+] System server5 : Enabling RDP.
+VERBOSE: [+] System server5 : Allowing 'Domain users' group to RDP.
+VERBOSE: [+] System server5 : Setting Windows Update settings to Auto-Update
+VERBOSE: [*] System server5 : Done with local configurations.
+VERBOSE: [*] System server2 : Starting local configurations.
+VERBOSE: [*] System server2 : Setting RDP settings.
+VERBOSE: [+] System server2 : Enabling RDP.
+VERBOSE: [+] System server2 : Setting Windows Update settings to Auto-Update
+VERBOSE: [*] System server2 : Done with local configurations.
+VERBOSE: [*] System client6 : Starting local configurations.
+VERBOSE: [*] System client6 : Running with domain creds - will do domain related local tasks.
+VERBOSE: [*] System client6 : Setting RDP settings.
+VERBOSE: [+] System client6 : Enabling RDP.
+VERBOSE: [+] System client6 : Allowing 'Domain users' group to RDP.
+VERBOSE: [+] System client6 : Disabling Restore Points.
+VERBOSE: [+] System client6 : Setting Windows Update settings to Auto-Update
+VERBOSE: [*] System client6 : Done with local configurations.
+VERBOSE: [*] System client7 : Starting local configurations.
+VERBOSE: [*] System client7 : Running with domain creds - will do domain related local tasks.
+VERBOSE: [*] System client7 : Setting RDP settings.
+VERBOSE: [+] System client7 : Enabling RDP.
+VERBOSE: [+] System client7 : Allowing 'Domain users' group to RDP.
+VERBOSE: [+] System client7 : Disabling Restore Points.
+VERBOSE: [+] System client7 : Setting Windows Update settings to Auto-Update
+VERBOSE: [*] System client7 : Done with local configurations.
+VERBOSE: [*] System server1 : Starting local configurations.
+VERBOSE: [*] System server1 : Running with domain creds - will do domain related local tasks.
+VERBOSE: [*] System server1 : Setting RDP settings.
+VERBOSE: [+] System server1 : Enabling RDP.
+VERBOSE: [+] System server1 : Allowing 'Domain users' group to RDP.
+VERBOSE: [*] System server1 : Done with local configurations.
+VERBOSE: [*] System client5 : Starting local configurations.
+VERBOSE: [*] System client5 : Running with domain creds - will do domain related local tasks.
+VERBOSE: [*] System client5 : Setting RDP settings.
+VERBOSE: [+] System client5 : Enabling RDP.
+VERBOSE: [+] System client5 : Allowing 'Domain users' group to RDP.
+VERBOSE: [+] System client5 : Disabling Restore Points.
+VERBOSE: [+] System client5 : Setting Windows Update settings to Auto-Update
+VERBOSE: [*] System client5 : Done with local configurations.
+VERBOSE: [*] System client2 : Starting local configurations.
+VERBOSE: [*] System client2 : Running with domain creds - will do domain related local tasks.
+VERBOSE: [*] System client2 : Setting RDP settings.
+VERBOSE: [+] System client2 : Enabling RDP.
+VERBOSE: [+] System client2 : Allowing 'Domain users' group to RDP.
+VERBOSE: [+] System client2 : Disabling Restore Points.
+VERBOSE: [+] System client2 : Setting Windows Update settings to Auto-Update
+VERBOSE: [*] System client2 : Done with local configurations.
+VERBOSE: [*] System client3 : Starting local configurations.
+VERBOSE: [*] System client3 : Running with domain creds - will do domain related local tasks.
+VERBOSE: [*] System client3 : Setting RDP settings.
+VERBOSE: [+] System client3 : Enabling RDP.
+VERBOSE: [+] System client3 : Allowing 'Domain users' group to RDP.
+VERBOSE: [+] System client3 : Disabling Restore Points.
+VERBOSE: [+] System client3 : Setting Windows Update settings to Auto-Update
+VERBOSE: [*] System client3 : Done with local configurations.
+VERBOSE: [*] System client1 : Starting local configurations.
+VERBOSE: [*] System client1 : Running with domain creds - will do domain related local tasks.
+VERBOSE: [*] System client1 : Setting RDP settings.
+VERBOSE: [+] System client1 : Enabling RDP.
+VERBOSE: [+] System client1 : Allowing 'Domain users' group to RDP.
+VERBOSE: [+] System client1 : Disabling Restore Points.
+VERBOSE: [+] System client1 : Setting Windows Update settings to Auto-Update
+VERBOSE: [*] System client1 : Done with local configurations.
+VERBOSE: [*] System client4 : Starting local configurations.
+VERBOSE: [*] System client4 : Running with domain creds - will do domain related local tasks.
+VERBOSE: [*] System client4 : Setting RDP settings.
+VERBOSE: [+] System client4 : Enabling RDP.
+VERBOSE: [+] System client4 : Allowing 'Domain users' group to RDP.
+VERBOSE: [+] System client4 : Disabling Restore Points.
+VERBOSE: [+] System client4 : Setting Windows Update settings to Auto-Update
+VERBOSE: [*] System client4 : Done with local configurations.
+VERBOSE: [*] System server3 : Starting local configurations.
+VERBOSE: [*] System server3 : Running with domain creds - will do domain related local tasks.
+VERBOSE: [*] System server3 : Setting RDP settings.
+VERBOSE: [+] System server3 : Enabling RDP.
+VERBOSE: [+] System server3 : Allowing 'Domain users' group to RDP.
+VERBOSE: [+] System server3 : Setting Windows Update settings to Auto-Update
+VERBOSE: [*] System server3 : Done with local configurations.
+VERBOSE: [*] Done with lab deployment.
+VERBOSE: [*] Deployed 2 networks,  1 Domain and 13 systems in 79 minutes.
+PS D:\ADLabDeployer>
